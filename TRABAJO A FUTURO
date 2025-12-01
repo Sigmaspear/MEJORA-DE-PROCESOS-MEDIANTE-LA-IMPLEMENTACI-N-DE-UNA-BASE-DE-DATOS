@@ -1,0 +1,18 @@
+
+---
+
+## . Cómo correrlo por primera vez (resumen rápido)
+
+1. **Levanta MySQL y MongoDB.**
+2. En una terminal (puede ser la de VS Code), estando en la carpeta del proyecto:
+
+   ```bash
+   mysql -u root -p < sql/create_tables.sql
+   mysql -u root -p sensores_db < sql/inserts.sql
+
+## Hay que cambiar la ruta y la contraseña
+mongosh < nosql/indices_mongodb.js
+python -m venv venv
+venv\Scripts\activate
+pip install -r requirements.txt
+python microservicio/ingest_sensores.py
